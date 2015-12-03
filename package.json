@@ -1,9 +1,3 @@
-/** 
- * Copyright 2015 F-Spexet (http://f-spexet.se)
- * Author: Emil Hemdal (GitHub: @emilhem)
- * License: MIT (see LICENSE for full license)
-**/
-
 {
   "name": "f-spex-web",
   "version": "1.0.0",
