@@ -1,0 +1,65 @@
+/** 
+ * Copyright 2015 F-Spexet (http://f-spexet.se)
+ * Author: Emil Hemdal (GitHub: @emilhem)
+ * License: MIT (see LICENSE for full license)
+**/
+
+{
+  "name": "f-spex-web",
+  "version": "1.0.0",
+  "description": "F-spexets websida 2016",
+  "main": "build.js",
+  "scripts": {
+    "test": "echo \"Achtung!\"",
+    "test:jshint": "jshint source/js/*.js",
+    "prebuild": "npm run clean",
+    "clean": "rm -r dist/* && mkdir -p dist/js/ dist/css/ dist/sidor/ dist/fonts/ dist/img/",
+    "build": "npm run build:js && npm run build:css && npm run build:html && npm run build:fonts && npm run build:images",
+    "build:js": "find source/js/ -type f -name \\*.js -exec cp -u -f {} dist/js/ \\; && echo 'JS updated!'",
+    "build:css": "find source/css/ -type f -name \\*.css -exec cp -u -f {} dist/css/ \\;  && echo 'CSS updated!'",
+    "build:html": "npm run build:mainPage && npm run build:subPages",
+    "build:mainPage": "jade --pretty --path source/jade/index.jade < source/jade/index.jade > dist/index.html",
+    "build:subPages": "jade --pretty source/jade/sidor --out dist/sidor",
+    "build:fonts": "find source/fonts/ -type f -exec cp -u -f {} dist/fonts/ \\; && echo 'Fonts updated!'",
+    "build:images": "find source/img/ -type f -exec cp -u -f {} dist/img/ \\; && echo 'Images updated!'",
+    "build:watch": "parallelshell 'npm run watch:js' 'npm run watch:css' 'npm run watch:html' 'npm run watch:fonts' 'npm run watch:images'",
+    "watch:js": "watch 'npm run build:js' source/js/",
+    "watch:css": "watch 'npm run build:css' source/css/",
+    "watch:html": "watch 'npm run build:html' source/jade/",
+    "watch:fonts": "watch 'npm run build:fonts' source/fonts/",
+    "watch:images": "watch 'npm run build:images' source/img/",
+    "livereload": "live-reload --port 9091 dist/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emilhem/f-spex-web.git"
+  },
+  "author": "Emil Hemdal",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/emilhem/f-spex-web/issues"
+  },
+  "homepage": "https://github.com/emilhem/f-spex-web#readme",
+  "private": true,
+  "devDependencies": {
+    "jade": "^1.11.0",
+    "live-reload": "^1.1.0",
+    "parallelshell": "^2.0.0",
+    "watch": "^0.16.0"
+  },
+  "jshintConfig": {
+    "node": true,
+    "bitwise": true,
+    "curly": true,
+    "eqeqeq": true,
+    "latedef": "nofunc",
+    "noarg": true,
+    "nonbsp": true,
+    "nonew": true,
+    "shadow": false,
+    "singleGroups": true,
+    "undef": true,
+    "unused": true,
+    "globalstrict": true
+  }
+}

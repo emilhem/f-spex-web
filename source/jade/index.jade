@@ -1,0 +1,59 @@
+//- 
+  Copyright 2015 F-Spexet (http://f-spexet.se)
+  Author: Emil Hemdal (GitHub: @emilhem)
+  License: MIT License (see LICENSE for full license)
+
+extends ./base.jade
+
+block styles
+  link(rel="stylesheet" href="css/foundation.min.css")
+  link(rel="stylesheet" href="css/style.css")
+
+include ./menu.jade
+
+block content
+  div.row
+    div.large-12.columns
+      h1.center F-spexet
+  +menu(choosen='hem')
+  div.row
+    div.large-12.columns
+      div.box
+        h2 Välkommen
+        p.no-margin Kort info om F-Spexet.
+  div.row
+    div.large-12.columns
+      div.box
+        h2 Nyheter
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          | tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          | quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          | consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+          | cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+          | proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  div.row
+    div.medium-6.columns
+      div.box
+        h3 När?
+        table
+          tbody
+            tr
+              td.text-left Datum här
+              td.text-right Tid här
+            tr
+              td.text-left Datum här
+              td.text-right Tid här
+            tr
+              td.text-left Datum här
+              td.text-right Tid här
+    div.medium-6.columns
+      div.box
+        h3 Var?
+        p.no-margin: a(href='#') Studenternas hus, GU
+    div.small-12.columns
+      div.box.center
+        h3 För Spexare
+        ul.no-format
+          li: a(href='#') F-Spexets wiki
+          li: a(href='#') Medlemsresurser
+

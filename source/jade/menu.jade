@@ -1,0 +1,17 @@
+//- 
+  Copyright 2015 F-Spexet (http://f-spexet.se)
+  Author: Emil Hemdal (GitHub: @emilhem)
+  License: MIT License (see LICENSE for full license)
+
+mixin menu
+  div.row
+    div.large-12.colums.menu#menu
+      ul
+        li: a(class=(attributes.choosen === 'hem' ? 'active' : ''), href='#') Hem
+        li: a(class=(attributes.choosen === 'nyheter' ? 'active' : ''), href='#') Nyheter
+        li: a(class=(attributes.choosen === 'biljetter' ? 'active' : ''), href='#') Biljetter
+        li: a(class=(attributes.choosen === 'meny' ? 'active' : ''), href='#') Meny
+        li: a(class=(attributes.choosen === 'om' ? 'active' : ''), href='#') Om F-spexet
+        li: a(class=(attributes.choosen === 'tidigare' ? 'active' : ''), href='#') Tidigare F-spex
+        li: a(class=(attributes.choosen === 'spexare' ? 'active' : ''), href='/for-spexare/') För spexare
+        li: a(class=(attributes.choosen === 'kontakt' ? 'active' : ''), href='#') Kontakt
